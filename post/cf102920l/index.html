@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<!-- This site was created with Wowchemy. https://www.wowchemy.com -->
+<!-- Last Published: May 7, 2023 --><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.7.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.047268c6dd09ad74ba54a0ba71837064.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.042e26407c9e383d96a1f26d6787c686.css" />
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+  <meta name="author" content="Junyao Wang 王骏峣" />
+
+
+
+
+
+  
+
+<meta name="description" content="Solution-CF102920L Two Buildings 优秀的分治题目。是“2020-2021 ACM-ICPC, Asia Seoul Regional Contest”的一道题。" />
+
+
+
+<link rel="alternate" hreflang="en-us" href="https://wjy-yy.github.io/post/cf102920l/" />
+<link rel="canonical" href="https://wjy-yy.github.io/post/cf102920l/" />
+
+
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/media/icon_hu7f884a298faf95f889f3a23a893e55a2_114855_32x32_fill_lanczos_center_3.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu7f884a298faf95f889f3a23a893e55a2_114855_180x180_fill_lanczos_center_3.png" />
+
+<meta name="theme-color" content="#1565c0" />
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<meta property="twitter:card" content="summary_large_image" />
+
+  <meta property="twitter:site" content="@wowchemy" />
+  <meta property="twitter:creator" content="@wowchemy" />
+<meta property="twitter:image" content="https://wjy-yy.github.io/post/cf102920l/featured.png" />
+<meta property="og:site_name" content="Junyao Wang&#39;s Website" />
+<meta property="og:url" content="https://wjy-yy.github.io/post/cf102920l/" />
+<meta property="og:title" content="Solution-CF102920L Two Buildings【分治】【决策单调性】 | Junyao Wang&#39;s Website" />
+<meta property="og:description" content="Solution-CF102920L Two Buildings 优秀的分治题目。是“2020-2021 ACM-ICPC, Asia Seoul Regional Contest”的一道题。" /><meta property="og:image" content="https://wjy-yy.github.io/post/cf102920l/featured.png" /><meta property="og:locale" content="en-us" />
+
+  
+    <meta
+      property="article:published_time"
+      content="2021-02-19T20:23:50&#43;00:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2021-02-19T20:23:50&#43;00:00">
+  
+
+
+
+
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wjy-yy.github.io/post/cf102920l/"
+  },
+  "headline": "Solution-CF102920L Two Buildings【分治】【决策单调性】",
+  
+  "image": [
+    "https://wjy-yy.github.io/post/cf102920l/featured.png"
+  ],
+  
+  "datePublished": "2021-02-19T20:23:50Z",
+  "dateModified": "2021-02-19T20:23:50Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Junyao Wang 王骏峣"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Junyao Wang's Website",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://wjy-yy.github.io/media/icon_hu7f884a298faf95f889f3a23a893e55a2_114855_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Solution-CF102920L Two Buildings 优秀的分治题目。是“2020-2021 ACM-ICPC, Asia Seoul Regional Contest”的一道题。"
+}
+</script>
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>Solution-CF102920L Two Buildings【分治】【决策单调性】 | Junyao Wang&#39;s Website</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="becc88f9da5e80b67125a638d62e965e" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.ec9d49ca50e4b80bdb08f0417a28ed84.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header header--fixed">
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Junyao Wang&#39;s Website</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Junyao Wang&#39;s Website</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Biography</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#experience"><span>Experience</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#accomplishments"><span>Accomplish­ments</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#recent"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Solution-CF102920L Two Buildings【分治】【决策单调性】</h1>
+
+  
+  <p class="page-subtitle">Solution-CF102920L Two Buildings 优秀的分治题目。是“2020-2021 ACM-ICPC, Asia Seoul Regional Contest”的一道题。</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Junyao Wang 王骏峣</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Feb 19, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/oi/acm/">OI/ACM</a>, <a href="/category/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">解题报告</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 146px; max-height: 53px;">
+  <div style="position: relative">
+    <img src="/post/cf102920l/featured_hucc4be9b3a614aaef13ae7cdf69007243_21347_720x2500_fit_q75_h2_lanczos_3.webp" width="146" height="53" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>优秀的分治题目。是“2020-2021 ACM-ICPC, Asia Seoul Regional Contest”的一道题。</p>
+<blockquote>
+<h2 id="description">Description</h2>
+<p>There are $n$ buildings along a horizontal street. The buildings are next to each other along the street, and the $i$-th building from left to right has width $1$ and height $h_i$. Among the $n$ buildings, we are to find two buildings, say the $i$-th building and $j$-th building with $i&lt;j$, such that $(h_i+h_j)*(j−i)$ is maximized.</p>
+<p>For example, the right figure shows $5$ buildings, with heights $1$, $3$, $2$, $5$, $4$, from left to right. If we choose the first $2$ buildings, then we get $(1+3)*(2−1)=4$. If we choose the first and fifth buildings, then we $(1+4)*(5−1)=20$. The maximum value is achieved by the second and fifth buildings with heights $3$ and $4$, respectively: $(3+4)*(5−2)=21$.</p>
+<p>Write a program that, given a sequence of building heights, prints $\max_{1\le i&lt;j\le n}(h_i+h_j)*(j−i)$.</p>
+<h2 id="input">Input</h2>
+<p>Your program is to read from standard input. The input starts with a line containing an integer $n$ ($2\le n\le 1,000,000$), where $n$ is the number of buildings. The buildings are numbered $1$ to $n$ from left to right. The second line contains the heights of $n$ buildings separated by a space such that the $i$-th number is the height $h_i$ of the $i$-th building ($1\le h_i\le 1,000,000$).</p>
+<h2 id="output">Output</h2>
+<p>Your program is to write to standard output. Print exactly one line. The line should contain $\max_{1\le i&lt;j\le n}(h_i+h_j)*(j−i)$.</p>
+<h2 id="examples">Examples</h2>
+<p><strong>input</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">5
+</span></span><span class="line"><span class="cl">1 3 2 5 4
+</span></span></code></pre></div><p><strong>output</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">21
+</span></span></code></pre></div><p><strong>input</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">5
+</span></span><span class="line"><span class="cl">8 3 6 3 1
+</span></span></code></pre></div><p><strong>output</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">36
+</span></span></code></pre></div></blockquote>
+<h2 id="题意">题意：</h2>
+<p>有 $n(2\le n\le 1000000)$ 栋楼房，第 $i$ 栋高度为 $h_i(1\le h_1\le 1000000)$。问两栋楼房所能构成的 $(h_i+h_j)*(j−i)$ 最大值是多少。</p>
+<h2 id="题解">题解：</h2>
+<p>为了方便，我们把要求的式子转化为 $(h_i-(-h_j))\times(j-i)$，这样构造出数列 $-h_i$，就是坐标系中 $x$ 轴上方和 $x$ 轴下方两个数列中选出两个 $h$ 进行计算。</p>
+<p>如果存在 $i&lt;j$，同时 $-h_i&lt;-h_j$，那么 $j$ 一定比 $i$ 更优。可以用单调栈来把数列 ${h_i}$ 和 ${-h_i}$ 都变为单调的。得到单增的 ${H_i}$ 和 ${-H_i}$。</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://www.wjyyy.top/wp-content/uploads/2021/02/%e5%b1%8f%e5%b9%95%e6%88%aa%e5%9b%be-2021-02-19-201207.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>如图，图中橙色的点删除后，对答案产生贡献的点只会在蓝色中产生。</p>
+<p>而蓝色的点 ${H_i}$ 和 ${-H_i}$ 对应了两段递增的序列（此时下标 $i$ 不一定连续）。最终答案为 $[H_i-(-H_j)]\times(j-i)$。假设对于选定的 $H_i$，对应 $-H_j$ 为最优解，即 $\forall k&gt;j,[H_i-(-H_j)]\times(j-i)\geqslant[H_i-(-H_k)]\times(k-i)$，可知</p>
+<p>$$\begin{aligned}<br>
+[H_i-(-H_j)]\times(j-i)&amp;\geqslant[H_i-(-H_k)]\times(k-i)\\
+[H_i-(-H_j)]\times(j-i)\color{red}{-[H_i-(-H_k)]\times(j-i)}&amp;\geqslant[H_i-(-H_k)]\times(k-i)\color{red}{-[H_i-(-H_k)]\times(j-i)}\\
+[(-H_k)-(-H_j)]\times(j-i)&amp;\geqslant[H_i-(-H_k)]\times(k-j)
+\end{aligned}$$</p>
+<p>因此对于 $l&lt;i$，对上式进行放缩，得</p>
+<p>$$\begin{aligned}\\
+[(-H_k)-(-H_j)]\times(j-i)&amp;\geqslant[H_i-(-H_k)]\times(k-j)\\
+[(-H_k)-(-H_j)]\times(j-i)\color{blue}{+[(-H_k)-(-H_j)]\times(i-l)}&amp;\geqslant[H_i-(-H_k)]\times(k-j)\color{red}{-(H_i-H_l)\times(k-j)}\\
+[(-H_k)-(-H_j)]\times(j-l)&amp;\geqslant[H_l-(-H_k)]\times(k-j)\\
+[(-H_k)-(-H_j)]\times(j-l)\color{blue}{+[H_l-(-H_k)]\times(j-l)}&amp;\geqslant[H_l-(-H_k)]\times(k-j)\color{blue}{+[H_l-(-H_k)]\times(j-l)}\\
+[H_l-(-H_j)]\times(j-l)&amp;\geqslant[H_l-(-H_k)]\times(k-l)
+\end{aligned}$$</p>
+<p>所以当 $H_i$ 对应的最优解位置为 $-H_j$ 时，$l&lt;i$ 的 $H_l$ 对应的最优解位置 $-H_k$ 满足 $k\geqslant j$。</p>
+<p>如果上式推导过于复杂，它对应的图形推导如下。</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://www.wjyyy.top/wp-content/uploads/2021/02/%e5%b1%8f%e5%b9%95%e6%88%aa%e5%9b%be-2021-02-19-201221.png" alt="" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>左图中，如果 $H_i$ 对应的最优解是 $H_j$，那么①的面积 $S_1$ 一定比②的 $S_2$ 大。右图中，那么对 $l&lt;i$，已知 $S_1\geqslant S_2$，有 $S_1+S_3\geqslant S_2-S_4$，所以 $l$ 对应的最优解一定不会在 $j$ 右边。</p>
+<p>此时再考虑上边的推导，便能清楚理解了。</p>
+<p>分治递归，时间复杂度为 $O(n\log n)$。</p>
+<h2 id="code">Code：</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;cmath&gt; </span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define ll long long
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">1001000</span><span class="p">],</span><span class="n">b</span><span class="p">[</span><span class="mi">1001000</span><span class="p">],</span><span class="n">c</span><span class="p">[</span><span class="mi">1001000</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">bp</span><span class="p">[</span><span class="mi">1001000</span><span class="p">],</span><span class="n">cp</span><span class="p">[</span><span class="mi">1001000</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">ll</span> <span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">solve</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span><span class="kt">int</span> <span class="n">L</span><span class="p">,</span><span class="kt">int</span> <span class="n">R</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="o">&gt;</span><span class="n">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">mid</span><span class="o">=</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">,</span><span class="n">q</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ll</span> <span class="n">Ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">L</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">R</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">Ans</span><span class="o">&lt;</span><span class="mi">1ll</span><span class="o">*</span><span class="p">(</span><span class="n">cp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bp</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">+</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">q</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">Ans</span><span class="o">=</span><span class="mi">1ll</span><span class="o">*</span><span class="p">(</span><span class="n">cp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">bp</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">+</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ans</span><span class="o">=</span><span class="n">ans</span><span class="o">&gt;</span><span class="n">Ans</span><span class="o">?</span><span class="nl">ans</span><span class="p">:</span><span class="n">Ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">solve</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">mid</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">q</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">solve</span><span class="p">(</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">R</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">ii</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">iii</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">1e8</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="n">b</span><span class="p">[</span><span class="n">ii</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">b</span><span class="p">[</span><span class="o">++</span><span class="n">ii</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">			<span class="n">bp</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">			
+</span></span><span class="line"><span class="cl">		<span class="k">while</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">c</span><span class="p">[</span><span class="n">iii</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">			<span class="o">--</span><span class="n">iii</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">c</span><span class="p">[</span><span class="o">++</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cp</span><span class="p">[</span><span class="n">iii</span><span class="p">]</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">solve</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">ii</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">iii</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">ans</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/codeforces/">Codeforces</a>
+  
+  <a class="badge badge-light" href="/tag/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">解题报告</a>
+  
+  <a class="badge badge-light" href="/tag/%E5%88%86%E6%B2%BB/">分治</a>
+  
+  <a class="badge badge-light" href="/tag/%E5%86%B3%E7%AD%96%E5%8D%95%E8%B0%83%E6%80%A7/">决策单调性</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwjy-yy.github.io%2Fpost%2Fcf102920l%2F&amp;text=Solution-CF102920L&#43;Two&#43;Buildings%E3%80%90%E5%88%86%E6%B2%BB%E3%80%91%E3%80%90%E5%86%B3%E7%AD%96%E5%8D%95%E8%B0%83%E6%80%A7%E3%80%91" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwjy-yy.github.io%2Fpost%2Fcf102920l%2F&amp;t=Solution-CF102920L&#43;Two&#43;Buildings%E3%80%90%E5%88%86%E6%B2%BB%E3%80%91%E3%80%90%E5%86%B3%E7%AD%96%E5%8D%95%E8%B0%83%E6%80%A7%E3%80%91" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a href="mailto:?subject=Solution-CF102920L%20Two%20Buildings%E3%80%90%E5%88%86%E6%B2%BB%E3%80%91%E3%80%90%E5%86%B3%E7%AD%96%E5%8D%95%E8%B0%83%E6%80%A7%E3%80%91&amp;body=https%3A%2F%2Fwjy-yy.github.io%2Fpost%2Fcf102920l%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fwjy-yy.github.io%2Fpost%2Fcf102920l%2F&amp;title=Solution-CF102920L&#43;Two&#43;Buildings%E3%80%90%E5%88%86%E6%B2%BB%E3%80%91%E3%80%90%E5%86%B3%E7%AD%96%E5%8D%95%E8%B0%83%E6%80%A7%E3%80%91" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Solution-CF102920L&#43;Two&#43;Buildings%E3%80%90%E5%88%86%E6%B2%BB%E3%80%91%E3%80%90%E5%86%B3%E7%AD%96%E5%8D%95%E8%B0%83%E6%80%A7%E3%80%91%20https%3A%2F%2Fwjy-yy.github.io%2Fpost%2Fcf102920l%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fwjy-yy.github.io%2Fpost%2Fcf102920l%2F&amp;title=Solution-CF102920L&#43;Two&#43;Buildings%E3%80%90%E5%88%86%E6%B2%BB%E3%80%91%E3%80%90%E5%86%B3%E7%AD%96%E5%8D%95%E8%B0%83%E6%80%A7%E3%80%91" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://wjy-yy.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu4044af3239df26c69f7ef5822bb7e4b7_70376_270x270_fill_q75_lanczos_center.jpg" alt="Junyao Wang 王骏峣"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://wjy-yy.github.io/">Junyao Wang 王骏峣</a></h5>
+      <h6 class="card-subtitle">Student major in Computer Science</h6>
+      <p class="card-text">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://wjyyy.top" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/wjy-yy" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/uploads/resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    © 2023 Junyao Wang. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.1d4346c6f7d46c340dc0a9058dd85c13.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/en/js/wowchemy.min.c84202fca2a6efbbecbaf0e8358c1d51.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
