@@ -3,7 +3,7 @@
 #include<iostream>
 using namespace std;
 int t[5005],b[5005];
-bool in[5005];//这个点在不在生成树里 
+bool in[5005];//这个点在不在生成树里
 int dis[5005];
 int f(int i,int j)
 {
